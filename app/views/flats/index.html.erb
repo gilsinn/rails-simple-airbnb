@@ -1,0 +1,21 @@
+<br>
+<br>
+<br>
+<h1>All our Flats</h1>
+
+<p>All 5 flats</p>
+
+<div .card>
+  <ul>
+    <% @flats.each do |flat| %>
+      <li><%= link_to(flat.name, flat_path(flat)) %>
+      <%= link_to "Delete",
+              flat_path(flat),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "Create",  new_flat_path %>
